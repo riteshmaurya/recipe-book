@@ -19,6 +19,8 @@ import { AuthModule } from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { LoggingInterceptor } from './shared/logging-interceptor';
+import { StoreModule } from '@ngrx/store';
+import { shoppingListReducer } from './shopping-list/store/shopping-list.reducers';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { LoggingInterceptor } from './shared/logging-interceptor';
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({shoppingList: shoppingListReducer})
     
     
   ],
