@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 })
 export class AuthService {
 
-  token: String;
+  token: string;
 
   constructor(private router: Router) { }
 
@@ -56,6 +56,7 @@ export class AuthService {
   logout(){
     firebase.auth().signOut();
     this.token = null;
-    this.router.navigate(['singin']);
+    console.log("log out sucessful");
+    this.router.navigate(['signin']);
   }
 }
